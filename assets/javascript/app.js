@@ -7,62 +7,70 @@ $(document).ready(function(){
 
     var questions = [
         {
-            "question" : "Question 1?",
-            "choices" : ["Choice 1","Choice 2","Choice 3","Choice 4"],
-            "answerIndex" : 1
-        },
-        {
-            "question" : "Question 2?",
-            "choices" : ["Choice 1","Choice 2","Choice 3","Choice 4"],
-            "answerIndex" : 2
-        },
-        {
-            "question" : "Question 3?",
-            "choices" : ["Choice 1","Choice 2","Choice 3","Choice 4"],
+            "question" : "Where do the Ducks play?",
+            "choices" : ["Chicago","Montreal","Oregon","Anaheim"],
             "answerIndex" : 3
         },
         {
-            "question" : "Question 4?",
-            "choices" : ["Choice 1","Choice 2","Choice 3","Choice 4"],
-            "answerIndex" : 4
+            "question" : "The Blackhawks are from what city?",
+            "choices" : ["New York","Chicago","Las Vegas","Atlanta"],
+            "answerIndex" : 1
+        },
+        {
+            "question" : "What team isn't from Canada?",
+            "choices" : ["Red Wings","Canadians","Maple Leafs","Senators"],
+            "answerIndex" : 0
+        },
+        {
+            "question" : "Which team has never won a stanley cup?",
+            "choices" : ["Bruins","Redwings","Blues","Maple Leafs"],
+            "answerIndex" : 2
         }
     ];
-    // example of how to get into this object
-    // questions[2].choices[2]
+
+    gameBegin();
 
     function gameBegin (){
-        for(var i = 0; i < questions.length; i++){
-        }
-    }
-
-    showQuestion()
-
-    function showQuestion () {
-        $('<div/>', {'id':'question-container'}).appendTo("#question-group");
         
+        showQuestions()
+            
+        function showQuestions () {
+            $('<div id="question" class="row"></div>').appendTo('#question-group');
+            $('<div id="question-column" class="col-lg-12">').appendTo('#question');
+            $('<div id="question-text">').appendTo('#question-column');
+            
+            
+            for(var i = 0; i < questions.length; i++){
+                console.log(questions[i].question);
+                $('#question-text').append('<p id="question-paragraph" class="row">Question: ' + questions[i].question);
+                console.log(questions[i].choices);
 
-    //    run through and recreate HTML from page into
+                
+                // for(var i = 0; i < questions.choices[0].length; i++){
+                    
+                // }
+            
+            // $('<div id="question-choices">').appendTo('#question-text');
+            // $('<div id="question-choices-row" class="row">').appendTo('#question-choices');
+            // $('<div id="question-choices-column" class="col-lg-12">').appendTo('#question-choices-row');
+            // $('#question-choices-column').append('<input type="radio" id="radio-choices"><label id="choice-label">' + questions[0].choices[0] + '</label>');
+            // $('#question-choices-column').append('<input type="radio" id="radio-choices"><label id="choice-label">' + questions[0].choices[1] + '</label>');
+            // $('#question-choices-column').append('<input type="radio" id="radio-choices"><label id="choice-label">' + questions[0].choices[2] + '</label>');
+            // $('#question-choices-column').append('<input type="radio" id="radio-choices"><label id="choice-label">' + questions[0].choices[3] + '</label>');
+            }
 
-        //         <div id="question1" class="row">
-        //             <div class="col-lg-12">
-        //                 <p id="question-text">Question 1</p>
-        //             </div>
-        //         </div>
-
-        //         <div id="questionanswer1" class="row">
-        //             <div class="col-md-12">
-                        // for loop to loop through choices property array for this question object
-        //                 <input type="radio" name="radiogroup1" value="choice1" id="choice1">
-        //                 <label id="choicelabel1" for"choice1">Choice 1</label>
-                        
-        //             </div>
-        //         </div>
-        
-        function getRadioChoices (){
-            // <div class="col-md-12">
-            // <input type="radio" name="radiogroup1" value="choice1" id="choice1">
-            // <label id="choicelabel1" for"choice1">Choice 1</label>
+            
+                
+                
+                // function getRadioChoices (){
+                //     for(i = 0; i < questions.choices[0].length; i++){
+                //         console.log(this)
+                //         $('#question-choices-column').append('<input type="radio" id="radio-choices"><label id="choice-label">' + questions[0].choices[0] + '</label>');
+                //     }
+                // }
+            } 
         }
-    }
+        
+    
 
 });
