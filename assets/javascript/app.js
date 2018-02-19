@@ -25,6 +25,36 @@ $(document).ready(function(){
             "question" : "Which team has never won a stanley cup?",
             "choices" : ["Bruins","Redwings","Blues","Maple Leafs"],
             "answerIndex" : 2
+        },
+        {
+            "question" : "How many games are in a NHL regular season?",
+            "choices" : ["46","144","82","78"],
+            "answerIndex" : 2
+        },
+        {
+            "question" : "Which team has won the most Stanley Cups?",
+            "choices" : ["Canadiens","Maple Leafs","Red Wings","Bruins"],
+            "answerIndex" : 0
+        },
+        {
+            "question" : "Which team did Wayne Gretsky not play for?",
+            "choices" : ["Edmonton","Los Angeles","New York","Calgary"],
+            "answerIndex" : 3
+        },
+        {
+            "question" : "Which team doesn't have an animal for a mascot?",
+            "choices" : ["Boston","Anaheim","San Jose","Calgary"],
+            "answerIndex" : 3
+        },
+        {
+            "question" : "What format is a hockey game in?",
+            "choices" : ["halves","thirds","quarters","fifths"],
+            "answerIndex" : 1
+        },
+        {
+            "question" : "What is the machine that grooms the ice called?",
+            "choices" : ["Zamboni","Mower","Ice Pusher","Groomer"],
+            "answerIndex" : 3
         }
     ];
 
@@ -36,16 +66,11 @@ $(document).ready(function(){
             
         function showQuestions () {
             $('<div id="question" class="row"></div>').appendTo('#question-group');
-            // $('<div id="question-column" class="col-lg-12">').appendTo('#question');
-            // $('<div id="question-text">').appendTo('#question-column');
-            
-            
-            
+   
             for(var i = 0; i < questions.length; i++){
                 console.log(questions[i].question);
-                $('#question-group').append('<div id="question-paragraph" class="col-lg-12">Question: ' + questions[i].question + '<div id="choices-display" class="col-lg-12">' + '<input type="radio" id="radio-choices"><label id="choice-label">' + questions[i].choices[0] + '</label>' + '<input type="radio" id="radio-choices"><label id="choice-label">' + questions[i].choices[1] + '</label>' + '<input type="radio" id="radio-choices"><label id="choice-label">' + questions[i].choices[2] + '</label>' + '<input type="radio" id="radio-choices"><label id="choice-label">' + questions[i].choices[3] + '</label>');
-                console.log(questions[i].choices);
-                
+                $('#question-group').append('<div id="question-paragraph" class="col-lg-12">Question: ' + questions[i].question + '<div id="choices-display" class="col-lg-12">' + '<input type="radio" id="radio-choices" name="button"><label id="choice-label">' + questions[i].choices[0] + '</label>' + '<input type="radio" id="radio-choices" name="button"><label id="choice-label">' + questions[i].choices[1] + '</label>' + '<input type="radio" id="radio-choices" name="button"><label id="choice-label">' + questions[i].choices[2] + '</label>' + '<input type="radio" id="radio-choices" name="button"><label id="choice-label">' + questions[i].choices[3] + '</label>');
+                console.log(questions[i].choices); 
             }   
         }
     }

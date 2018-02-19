@@ -1,3 +1,13 @@
 body {
     text-align: center;
+    background-color: #cf2e2e;
+    background-image: url("hockeybackground.jpg");
+}
+
+#question-paragraph{
+    padding: 10px;
+}
+
+#choices-display{
+    padding: 10px;
 }
