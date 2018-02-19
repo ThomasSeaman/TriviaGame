@@ -36,16 +36,18 @@ $(document).ready(function(){
             
         function showQuestions () {
             $('<div id="question" class="row"></div>').appendTo('#question-group');
-            $('<div id="question-column" class="col-lg-12">').appendTo('#question');
-            $('<div id="question-text">').appendTo('#question-column');
+            // $('<div id="question-column" class="col-lg-12">').appendTo('#question');
+            // $('<div id="question-text">').appendTo('#question-column');
+            
             
             
             for(var i = 0; i < questions.length; i++){
                 console.log(questions[i].question);
-                $('#question-text').append('<p id="question-paragraph" class="row">Question: ' + questions[i].question);
+                $('#question-group').append('<div id="question-paragraph" class="col-lg-12">Question: ' + questions[i].question + '<div id="choices-display" class="col-lg-12">' + '<input type="radio" id="radio-choices"><label id="choice-label">' + questions[i].choices[0] + '</label>' + '<input type="radio" id="radio-choices"><label id="choice-label">' + questions[i].choices[1] + '</label>' + '<input type="radio" id="radio-choices"><label id="choice-label">' + questions[i].choices[2] + '</label>' + '<input type="radio" id="radio-choices"><label id="choice-label">' + questions[i].choices[3] + '</label>');
                 console.log(questions[i].choices);
-
-                
+                // var choiceList = questions[i].choices
+                // var questionChoices = questions[i].choices
+                // $('#choices-display').html(questions[i].choices);
                 // for(var i = 0; i < questions.choices[0].length; i++){
                     
                 // }
@@ -58,16 +60,10 @@ $(document).ready(function(){
             // $('#question-choices-column').append('<input type="radio" id="radio-choices"><label id="choice-label">' + questions[0].choices[2] + '</label>');
             // $('#question-choices-column').append('<input type="radio" id="radio-choices"><label id="choice-label">' + questions[0].choices[3] + '</label>');
             }
-
             
                 
                 
-                // function getRadioChoices (){
-                //     for(i = 0; i < questions.choices[0].length; i++){
-                //         console.log(this)
-                //         $('#question-choices-column').append('<input type="radio" id="radio-choices"><label id="choice-label">' + questions[0].choices[0] + '</label>');
-                //     }
-                // }
+              
             } 
         }
         
