@@ -45,28 +45,8 @@ $(document).ready(function(){
                 console.log(questions[i].question);
                 $('#question-group').append('<div id="question-paragraph" class="col-lg-12">Question: ' + questions[i].question + '<div id="choices-display" class="col-lg-12">' + '<input type="radio" id="radio-choices"><label id="choice-label">' + questions[i].choices[0] + '</label>' + '<input type="radio" id="radio-choices"><label id="choice-label">' + questions[i].choices[1] + '</label>' + '<input type="radio" id="radio-choices"><label id="choice-label">' + questions[i].choices[2] + '</label>' + '<input type="radio" id="radio-choices"><label id="choice-label">' + questions[i].choices[3] + '</label>');
                 console.log(questions[i].choices);
-                // var choiceList = questions[i].choices
-                // var questionChoices = questions[i].choices
-                // $('#choices-display').html(questions[i].choices);
-                // for(var i = 0; i < questions.choices[0].length; i++){
-                    
-                // }
-            
-            // $('<div id="question-choices">').appendTo('#question-text');
-            // $('<div id="question-choices-row" class="row">').appendTo('#question-choices');
-            // $('<div id="question-choices-column" class="col-lg-12">').appendTo('#question-choices-row');
-            // $('#question-choices-column').append('<input type="radio" id="radio-choices"><label id="choice-label">' + questions[0].choices[0] + '</label>');
-            // $('#question-choices-column').append('<input type="radio" id="radio-choices"><label id="choice-label">' + questions[0].choices[1] + '</label>');
-            // $('#question-choices-column').append('<input type="radio" id="radio-choices"><label id="choice-label">' + questions[0].choices[2] + '</label>');
-            // $('#question-choices-column').append('<input type="radio" id="radio-choices"><label id="choice-label">' + questions[0].choices[3] + '</label>');
-            }
-            
                 
-                
-              
-            } 
+            }   
         }
-        
-    
-
+    }
 });
