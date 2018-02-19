@@ -1,5 +1,6 @@
 $(document).ready(function(){
     var timeRemaining
+    var countDown
     var correct
     var incorrect
     var gameover
@@ -58,7 +59,11 @@ $(document).ready(function(){
         }
     ];
 
-    gameBegin();
+    $("#start").on("click",function(){
+        gameBegin();
+        
+        
+      });
 
     function gameBegin (){
         
@@ -70,7 +75,8 @@ $(document).ready(function(){
             for(var i = 0; i < questions.length; i++){
                 console.log(questions[i].question);
                 $('#question-group').append('<div id="question-paragraph" class="col-lg-12">Question: ' + questions[i].question + '<div id="choices-display" class="col-lg-12">' + '<input type="radio" id="radio-choices" name="button"><label id="choice-label">' + questions[i].choices[0] + '</label>' + '<input type="radio" id="radio-choices" name="button"><label id="choice-label">' + questions[i].choices[1] + '</label>' + '<input type="radio" id="radio-choices" name="button"><label id="choice-label">' + questions[i].choices[2] + '</label>' + '<input type="radio" id="radio-choices" name="button"><label id="choice-label">' + questions[i].choices[3] + '</label>');
-                console.log(questions[i].choices); 
+                console.log(questions[i].choices);
+                
             }   
         }
     }
