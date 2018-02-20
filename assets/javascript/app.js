@@ -71,13 +71,20 @@ $(document).ready(function(){
             
         function showQuestions () {
             $('<div id="question" class="row"></div>').appendTo('#question-group');
-   
+            
             for(var i = 0; i < questions.length; i++){
                 console.log(questions[i].question);
-                $('#question-group').append('<div id="question-paragraph" class="col-lg-12">Question: ' + questions[i].question + '<div id="choices-display" class="col-lg-12">' + '<input type="radio" id="radio-choices" name="button"><label id="choice-label">' + questions[i].choices[0] + '</label>' + '<input type="radio" id="radio-choices" name="button"><label id="choice-label">' + questions[i].choices[1] + '</label>' + '<input type="radio" id="radio-choices" name="button"><label id="choice-label">' + questions[i].choices[2] + '</label>' + '<input type="radio" id="radio-choices" name="button"><label id="choice-label">' + questions[i].choices[3] + '</label>');
                 console.log(questions[i].choices);
-                
-            }   
+                console.log(questions[i].answerIndex)
+                $('#question-group').append('<div id="question-paragraph" class="col-lg-12">Question: ' + questions[i].question + '<div id="choices-display" class="col-lg-12">' + '<input type="radio" id="radio-choices" name=“button'+[i]+'" + ><label id="choice-label">' + questions[i].choices[0] + '</label>' + '<input type="radio" id="radio-choices" name=“button'+[i]+'" + ><label id="choice-label">' + questions[i].choices[1] + '</label>' + '<input type="radio" id="radio-choices" name=“button'+[i]+'" + ><label id="choice-label">' + questions[i].choices[2] + '</label>' + '<input type="radio" id="radio-choices" name=“button'+[i]+'" + ><label id="choice-label">' + questions[i].choices[3] + '</label>');
+            }  
+            
+            $("#radio-choices").on("click", function(){
+                console.log("Hello")
+            })
+            
+            
+            
         }
     }
 });
