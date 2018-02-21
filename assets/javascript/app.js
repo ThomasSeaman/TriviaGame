@@ -75,13 +75,20 @@ $(document).ready(function(){
             for(var i = 0; i < questions.length; i++){
                 console.log(questions[i].question);
                 console.log(questions[i].choices);
-                console.log(questions[i].answerIndex)
-                $('#question-group').append('<div id="question-paragraph" class="col-lg-12">Question: ' + questions[i].question + '<div id="choices-display" class="col-lg-12">' + '<input type="radio" id="radio-choices" name=“button'+[i]+'" + ><label id="choice-label">' + questions[i].choices[0] + '</label>' + '<input type="radio" id="radio-choices" name=“button'+[i]+'" + ><label id="choice-label">' + questions[i].choices[1] + '</label>' + '<input type="radio" id="radio-choices" name=“button'+[i]+'" + ><label id="choice-label">' + questions[i].choices[2] + '</label>' + '<input type="radio" id="radio-choices" name=“button'+[i]+'" + ><label id="choice-label">' + questions[i].choices[3] + '</label>');
+                console.log(questions[i].answerIndex);
+                $('#question-group').append('<div id="question-paragraph" class="col-lg-12">Question: ' + questions[i].question + '<div id="choices-display" class="col-lg-12">' + '<input type="radio" class="radio-choices" name=“button" value="0"><label class="choice-label">' + questions[i].choices[0] + '</label>' + '<input type="radio" class="radio-choices" name=“button" value="1"><label class="choice-label">' + questions[i].choices[1] + '</label>' + '<input type="radio" class="radio-choices" name=“button" value="2"><label class="choice-label">' + questions[i].choices[2] + '</label>' + '<input type="radio" class="radio-choices" name=“button" value="3"><label class="choice-label">' + questions[i].choices[3] + '</label>');
             }  
             
-            $("#radio-choices").on("click", function(){
-                console.log("Hello")
-            })
+
+            // $(".radio-choices").on("click", function(){
+                $('#question-group input').on('change', function() {
+                    alert($('input:checked', '#question-group').val()); 
+                 });
+                   console.log()
+            // })
+            
+
+            
             
             
             
