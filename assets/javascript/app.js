@@ -73,44 +73,19 @@ $(document).ready(function(){
             $('<div id="question" class="row"></div>').appendTo('#question-group');
             
             for(var i = 0; i < questions.length; i++){
-                console.log(questions[i].question);
-                console.log(questions[i].choices);
-                console.log(questions[i].answerIndex);
-                $('#question-group').append('<div id="question-paragraph" class="col-lg-12">Question: ' + questions[i].question + '<div id="choices-display" class="col-lg-12">' + '<input type="radio" class="radio-choices" name=“button" value="0"><label class="choice-label">' + questions[i].choices[0] + '</label>' + '<input type="radio" class="radio-choices" name=“button" value="1"><label class="choice-label">' + questions[i].choices[1] + '</label>' + '<input type="radio" class="radio-choices" name=“button" value="2"><label class="choice-label">' + questions[i].choices[2] + '</label>' + '<input type="radio" class="radio-choices" name=“button" value="3"><label class="choice-label">' + questions[i].choices[3] + '</label>');
-               
+                $('#question-group').append(
+                    '<div id="question-paragraph" class="col-lg-12">Question: ' + questions[i].question + '<div id="choices-display" class="col-lg-12">' + 
+                    '<input type="radio" class="radio-choices" name="'+[i]+'" value="0"><label class="choice-label">' + questions[i].choices[0] + '</label>' + 
+                    '<input type="radio" class="radio-choices" name="'+[i]+'" value="1"><label class="choice-label">' + questions[i].choices[1] + '</label>' + 
+                    '<input type="radio" class="radio-choices" name="'+[i]+'" value="2"><label class="choice-label">' + questions[i].choices[2] + '</label>' + 
+                    '<input type="radio" class="radio-choices" name="'+[i]+'" value="3"><label class="choice-label">' + questions[i].choices[3] + '</label>');
             }  
-            
-            
 
-            // $(".radio-choices").on("click", function(){
-                $('#question-group input').on('change', function() {
-                    console.log($('input:checked', '#question-group').val()); 
-                    
-                    console.log(questions[0].answerIndex);
-                    console.log(questions[1].answerIndex);
-                    console.log(questions[2].answerIndex);
-                    console.log(questions[3].answerIndex);
-                    console.log(questions[4].answerIndex);
-                    console.log(questions[5].answerIndex);
-                    console.log(questions[6].answerIndex);
-                    console.log(questions[7].answerIndex);
-                    console.log(questions[8].answerIndex);
-                    console.log(questions[9].answerIndex);
-                });
-
-                
-                
-
-                // if(questions[0].answerIndex === )
-
-                //    console.log();
-            // })
-            
-
-            
-            
-            
-            
+            $('#question-group input').on('click', function() {
+                console.log(this)
+                console.log($(this).attr("name"))
+                console.log($(this).attr("value"))
+            });  
         }
     }
 });
