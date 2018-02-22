@@ -60,31 +60,51 @@ $(document).ready(function(){
     ];
 
     $("#start").on("click",function(){
+        
         gameBegin();
-        
-        
-      });
+      
+    });
 
     function gameBegin (){
         
         showQuestions()
             
         function showQuestions () {
+            
             $('<div id="question" class="row"></div>').appendTo('#question-group');
             
             for(var i = 0; i < questions.length; i++){
+                
                 $('#question-group').append(
-                    '<div id="question-paragraph" class="col-lg-12">Question: ' + questions[i].question + '<div id="choices-display" class="col-lg-12">' + 
+                    '<div id="question-paragraph" class="col-lg-12">Question: ' + questions[i].question + '<div id="choices-display" class="col-lg-12" value="'+questions[i].answerIndex+'">' + 
                     '<input type="radio" class="radio-choices" name="'+[i]+'" value="0"><label class="choice-label">' + questions[i].choices[0] + '</label>' + 
                     '<input type="radio" class="radio-choices" name="'+[i]+'" value="1"><label class="choice-label">' + questions[i].choices[1] + '</label>' + 
                     '<input type="radio" class="radio-choices" name="'+[i]+'" value="2"><label class="choice-label">' + questions[i].choices[2] + '</label>' + 
                     '<input type="radio" class="radio-choices" name="'+[i]+'" value="3"><label class="choice-label">' + questions[i].choices[3] + '</label>');
+            
             }  
 
             $('#question-group input').on('click', function() {
+                
                 console.log(this)
-                console.log($(this).attr("name"))
-                console.log($(this).attr("value"))
+                // Value of question number
+                // console.log($(this).attr('name'));
+                // Value of user selection
+                // console.log($(this).attr('value'));
+                var userSelection = $(this).attr('value')
+                // Value of answer
+                // console.log($('#choices-display').attr('value'));
+                var answer = $('#choices-display').attr('value')
+                var correct = 0
+                var incorrect = 0 
+                if(answer === userSelection){
+                    correct++
+                }
+                if(answer != userSelection){
+                    incorrect++
+                }
+                console.log(correct)
+                console.log(incorrect)
             });  
         }
     }
