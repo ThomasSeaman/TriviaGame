@@ -1,11 +1,5 @@
 $(document).ready(function () {
-    var timeRemaining
-    var countDown
-    var correctAnswers
-    var gameover
-    var results
-    var answers
-
+    
     var questions = [
         {
             "question": "Where do the Ducks play?",
@@ -97,7 +91,7 @@ $(document).ready(function () {
                         incorrectAnswers++
                     }
                 }
-            $('.question-group').html('Correct Answers = ' + correctAnswers + '<br>' + 'Incorrect Answers = ' + incorrectAnswers)
+            $('.question-group').html('Correct Answers = ' + correctAnswers + '<br>' + 'Incorrect Answers = ' + incorrectAnswers + '<br>' + 'Press Start to Play Again')
             })
         }
     }

@@ -2,6 +2,7 @@ body {
     text-align: center;
     background-color: #cf2e2e;
     background-image: url("../images/hockeybackground.jpg");
+    font-size:24px;
 }
 
 #question-paragraph{
@@ -10,4 +11,12 @@ body {
 
 #choices-display{
     padding: 10px;
+}
+
+.radio-choices{
+    margin:15px;
+}
+
+.choice-label{
+    font-size:18px;
 }
