@@ -97,6 +97,7 @@ $(document).ready(function () {
                         incorrectAnswers++
                     }
                 }
+            $('.question-group').html('Correct Answers = ' + correctAnswers + '<br>' + 'Incorrect Answers = ' + incorrectAnswers)
             })
         }
     }
